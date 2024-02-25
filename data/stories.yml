@@ -1,0 +1,19 @@
+version: "3.1"
+
+stories:
+- story: Greet and express emotion
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: express_emotion
+  - action: utter_acknowledge_emotion
+
+- story: Seek advice for stress
+  steps:
+  - intent: seek_advice
+  - action: utter_provide_advice_stress
+
+- story: Share problem about relationships
+  steps:
+  - intent: share_problem
+  - action: utter_listen_relationship_problem

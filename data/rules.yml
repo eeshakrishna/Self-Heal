@@ -1,0 +1,17 @@
+version: "3.1"
+
+rules:
+- rule: Respond to greetings
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Provide advice for stress
+  steps:
+  - intent: seek_advice
+  - action: utter_provide_advice_stress
+
+- rule: Share problem about relationships
+  steps:
+  - intent: share_problem
+  - action: utter_listen_relationship_problem

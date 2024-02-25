@@ -1,0 +1,32 @@
+version: "3.1"
+
+intents:
+- greet
+- express_emotion
+- seek_advice
+- share_problem
+
+responses:
+  utter_greet:
+  - text: "Hello! How can I help you today?"
+
+  utter_acknowledge_emotion:
+  - text: "I'm here for you. It's okay to express your emotions."
+  - text: "Its ok tell me more."
+  - text: "It is important to acknowledge your feelings its good that you are able to share with me"
+
+  utter_provide_advice_stress:
+  - text: "Dealing with stress can be challenging. Try practicing mindfulness or deep breathing exercises."
+  - text: "It is important to focus on what we can actually handle in our lives"
+  - text: "Lets figure out what is the cause of you stressors"
+
+  utter_listen_relationship_problem:
+  - text: "I'm here to listen. Please tell me more about your relationship problem."
+  - text: "Tell me a little bit more of whats going on"
+  - text: "We can satisfy everyone is our lives"
+
+actions:
+- utter_greet
+- utter_acknowledge_emotion
+- utter_provide_advice_stress
+- utter_listen_relationship_problem

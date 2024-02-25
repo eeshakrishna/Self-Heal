@@ -1,0 +1,26 @@
+version: "3.1"
+
+stories:
+- story: Test greeting
+  steps:
+  - user: |
+      Hello
+  - action: utter_greet
+
+- story: Test expressing emotion
+  steps:
+  - user: |
+      I feel sad
+  - action: utter_acknowledge_emotion
+
+- story: Test seeking advice for stress
+  steps:
+  - user: |
+      How can I deal with stress?
+  - action: utter_provide_advice_stress
+
+- story: Test sharing a relationship problem
+  steps:
+  - user: |
+      I had an argument with a friend
+  - action: utter_listen_relationship_problem

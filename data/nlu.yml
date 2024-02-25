@@ -1,0 +1,33 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - Hello
+    - Hi there
+    - Hey
+    -Ayo
+
+- intent: express_emotion
+  examples: |
+    - I feel sad
+    - It's hard for me
+    - Feeling happy today
+    - Feeling tired
+    - Feeling depressed
+
+- intent: seek_advice
+  examples: |
+    - How can I deal with stress?
+    - Any tips for managing anxiety?
+    - What should I do when feeling overwhelmed?
+    - What should I do im so lost?
+    - How do I manage all my emotions?
+
+
+- intent: share_problem
+  examples: |
+    - I had an argument with a friend
+    - Dealing with relationship issues
+    - Feeling lonely lately
+    - I have not been on good terms with my family
