@@ -105,3 +105,15 @@
 .sendBtn{
     font-size:25px;
 }
+
+.emergencyBtn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}

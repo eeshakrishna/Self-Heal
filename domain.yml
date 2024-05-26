@@ -5,28 +5,63 @@ intents:
 - express_emotion
 - seek_advice
 - share_problem
-
-responses:
-  utter_greet:
-  - text: "Hello! How can I help you today?"
-
-  utter_acknowledge_emotion:
-  - text: "I'm here for you. It's okay to express your emotions."
-  - text: "Its ok tell me more."
-  - text: "It is important to acknowledge your feelings its good that you are able to share with me"
-
-  utter_provide_advice_stress:
-  - text: "Dealing with stress can be challenging. Try practicing mindfulness or deep breathing exercises."
-  - text: "It is important to focus on what we can actually handle in our lives"
-  - text: "Lets figure out what is the cause of you stressors"
-
-  utter_listen_relationship_problem:
-  - text: "I'm here to listen. Please tell me more about your relationship problem."
-  - text: "Tell me a little bit more of whats going on"
-  - text: "We can satisfy everyone is our lives"
+- explain_sit
+- therapy
+- studies
+- goodbye
+- crisis
 
 actions:
 - utter_greet
 - utter_acknowledge_emotion
 - utter_provide_advice_stress
 - utter_listen_relationship_problem
+- action_llm_generate_response_therapy
+- utter_studies
+- utter_goodbye
+- utter_crisis
+
+
+responses:
+
+  utter_greet:
+  - text: "Hi there, I'm Self Heal, your supportive companion guiding you on your journey to self-discovery and healing!"
+
+  utter_acknowledge_emotion:
+  - text: "I'm here for you. It's okay to express your emotions."
+  - text: "It is important to acknowledge your feelings its good that you are able to share with me"
+  - text: "I understand that you are feeling a certain way and I hope that you realize you are already a huge step forward in being able to acknowledge your feelings."
+
+  utter_provide_advice_stress:
+  - text: "Dealing with stress can be challenging. Try practicing mindfulness or deep breathing exercises."
+  - text: "Lets figure out what is the cause of you stressors"
+  - text: " Alright considering all the issues you have talked about lets focus on the things which you can actually control."
+
+  utter_listen_relationship_problem:
+  - text: "I'm here to listen. Please tell me more."
+  - text: "I understand tell me a little bit more of whats going on"
+  - text: "Communication is key in any relationship. Make sure you both actively listen to each other without interruptions and express your thoughts and feelings openly and honestly"
+
+  utter_ask_rephrase:
+  - text: "I'm sorry, I didn't quite get that. Can you please rephrase the question?"
+
+  utter_therapy:
+  - text: "Let me help you"
+
+  utter_studies:
+  - text: "It's completely normal to face challenges in your studies. Let's work together to understand what might be causing this difficulty."
+  - text: "Your worth isn't defined by your grades or academic performance. We can explore other aspects of your life where you excel and find fulfillment."
+  - text: "It takes courage to acknowledge when things aren't going as planned. I'm here to help you navigate through this and find effective strategies to improve."
+  - text: "Remember that learning is a journey, and setbacks are a natural part of it. Let's identify your strengths and areas for growth, and create a plan to move forward."
+
+  utter_goodbye:
+  - text: "After today's session, remember to be kind to yourself. Progress isn't always linear, and it's okay to have ups and downs.Click on the sentimental button to gauge your improvement score and celebrate your progress. Remember, every step forward is a victory."
+  - text: "Remember to practice self-care in the days ahead. You deserve it.Click on the sentimental button to gauge your improvement score and celebrate your progress. Remember, every step forward is a victory."
+  - text: "Your insights today were valuable. Click on the sentimental button to gauge your improvement score and celebrate your progress. Remember, every step forward is a victory."
+
+  utter_crisis:
+  - text: "You seem to be exhibiting self harm tendencies right now, Remember there are healthier ways to cope."
+
+
+
+

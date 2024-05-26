@@ -1,0 +1,126 @@
+.bby {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* background-color: #ede0d4; Light background */
+    background-image: url(https://wallpaperaccess.com/full/1261630.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: rgba(195, 188, 219, 0.6); /* Light pastel purple background */
+    backdrop-filter: blur(8px); /* Apply blur effect for glassmorphism */
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    padding: 40px;
+    width: 400px;
+    text-align: center;
+}
+
+h2 {
+    color: #524c60; /* Dark purple text */
+    margin-bottom: 20px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-field {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Greyish shadow effect */
+    transition: background-color 0.3s ease;
+}
+
+.input-field:focus {
+    background-color: rgba(255, 255, 255, 0.4); /* Lighter semi-transparent white on focus */
+}
+
+.button {
+    background-color: #7b47e1; /* Pastel purple button */
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(187, 165, 232, 0.3); /* Soft shadow */
+}
+
+.button:hover {
+    background-color: #9b82d9; /* Darker shade on hover */
+}
+
+.link {
+    color: #a37ded; /* Same as button color */
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+/* /////////////////////////////////////////////////////////////////////////////// */
+
+.LPhomebody {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('https://images.unsplash.com/photo-1517315003714-a071486bd9ea?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+}
+
+.LPcontainer {
+    padding: 40px;
+    height: 200px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    align-items: center;
+    flex-basis: 45%;
+    margin: 0 20px;
+}
+
+.LPtitle {
+    color: #7247b8;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.LPbutton {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #7247b8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.LPbutton:hover {
+    background-color: #5a2b7f;
+}

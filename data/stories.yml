@@ -12,8 +12,36 @@ stories:
   steps:
   - intent: seek_advice
   - action: utter_provide_advice_stress
+  - intent: express_emotion
+  - action: utter_acknowledge_emotion
+  - intent: therapy
+  - action: action_llm_generate_response_therapy
 
 - story: Share problem about relationships
   steps:
   - intent: share_problem
   - action: utter_listen_relationship_problem
+
+- story: Provide therapy
+  steps:
+  - intent: therapy
+  - action: action_llm_generate_response_therapy
+  - intent: therapy
+  - action: action_llm_generate_response_therapy
+
+- story: Study Issues
+  steps:
+  - intent: studies
+  - action: utter_studies
+
+- story: Saying goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: Issue
+  steps: 
+  - intent: crisis
+  - action: utter_crisis
+
+

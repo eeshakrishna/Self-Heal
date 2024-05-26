@@ -12,9 +12,10 @@ nlu:
   examples: |
     - I feel sad
     - It's hard for me
-    - Feeling happy today
+    - I'm feeling so tired and down lately.
     - Feeling tired
     - Feeling depressed
+    - My emotions are all over the place
 
 - intent: seek_advice
   examples: |
@@ -23,6 +24,7 @@ nlu:
     - What should I do when feeling overwhelmed?
     - What should I do im so lost?
     - How do I manage all my emotions?
+    - How do I prioritize myself?
 
 
 - intent: share_problem
@@ -31,3 +33,49 @@ nlu:
     - Dealing with relationship issues
     - Feeling lonely lately
     - I have not been on good terms with my family
+    - I'm having problems at work
+
+- intent: therapy
+  examples: |
+    - Life isnt going well for me
+    - I dont know what to do with myself
+    - What should I do moving forward
+    - I'm feeling so lost mentally
+    - I feel numb
+    - I'm feeling unproductive I dont feel like doing anything at all.
+    - I got a new internship but the work overload is killing me.
+    - I'm taking steps to better myself.
+    - I have so much work to do that I cant focus on anything I feel so drained mentally and physically.
+    - I dont wanna feel like a dissapointement
+    - I'm feeling so stressed with my engineering studies there is so much work to do I dont know where to start.
+    - I have worked in study groups but they dont help me at all I feel too insecure ask the people I work with are usually smarter than me.
+    - I received a low score on my test and its hurting me a lot.
+    - I've tried therapy before but it never really worked out for me and I'm scared of trying new medications.
+    - I've been struggling with body image issues and dont know how to be confident with myself.
+    
+- intent: studies
+  examples: |
+    - Im doing very bad at school I dont know what to do.
+    - My grades are low I cant focus on work.
+    - My marks dropped very low I dont know how to increase.
+
+- intent: goodbye
+  examples: |
+    - Bye Bye
+    - Im done with the sessions now
+    - Goodbye
+    - Im done for today
+    - Im finished for today
+    - See ya
+
+- intent: crisis
+  examples: |
+    - I want to end it all.
+    - I want to hurt myself.
+    - I feel killing myself.
+    - I dont wanna be alive anymore.
+    - I want to be erased from existance.
+    - I hate living
+    - I wish I was dead.
+    
+

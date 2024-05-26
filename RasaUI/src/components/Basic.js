@@ -1,39 +1,57 @@
-import './chatBot.css';
 import React, { useEffect, useState } from 'react';
 import {IoMdSend} from 'react-icons/io';
 import {BiBot, BiUser} from 'react-icons/bi';
+import axios from 'axios';
+import './chatBot.css';
+// import Navbar from './navbar'
+import {Link} from 'react-router-dom'
 
 function Basic() {
     const [chat, setChat] = useState([]);
     const [inputMessage, setInputMessage] = useState('');
     const [botTyping, setBotTyping] = useState(false);
     const [recognition, setRecognition] = useState(null);
+    const [isRecognizing, setIsRecognizing] = useState(false);
     const synth = window.speechSynthesis;
 
     useEffect(() => {
+        let newRecognition = null;
         if (window.SpeechRecognition || window.webkitSpeechRecognition) {
             const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-            const recognition = new SpeechRecognition();
-            recognition.continuous = false;
+            newRecognition = new SpeechRecognition();
+            newRecognition.continuous = false;
 
-            recognition.onresult = (event) => {
+            newRecognition.onresult = (event) => {
                 const transcript = event.results[0][0].transcript;
                 setInputMessage(transcript);
             };
 
-            recognition.onerror = (event) => {
+            newRecognition.onerror = (event) => {
                 console.error('Speech recognition error:', event.error);
             };
 
-            setRecognition(recognition);
+            setRecognition(newRecognition);
         } else {
             console.error('Speech recognition not supported by your browser.');
         }
-    }, []);
+
+        // Cleanup function to stop recognition when component unmounts
+        return () => {
+            if (newRecognition && isRecognizing) {
+                newRecognition.stop();
+            }
+        };
+    }, [isRecognizing]);
 
     const handleSpeechRecognition = () => {
         if (recognition) {
-            recognition.start();
+            if (isRecognizing) {
+                recognition.stop();
+                setIsRecognizing(false);
+            } else {
+                recognition.start();
+                setIsRecognizing(true);
+            }
         } else {
             console.error('Speech recognition not initialized.');
         }
@@ -54,31 +72,62 @@ function Basic() {
         }
     };
 
+    const emergencybutton = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios.post('http://localhost:5000/emergency', {
+            email:sessionStorage.getItem('email')
+            }, {
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                withCredentials: true
+            });
+    
+            if (response.status === 200) {
+                alert(response.data.message);
+            } else {
+                alert('Failed to send emergency alert');
+            }
+        } catch (error) {
+            console.error('Error sending emergency message:', error);
+            alert('An error occurred while sending the emergency message.');
+        }
+      };
+
     const rasaAPI = async function handleClick(name, msg) {
-        await fetch('http://localhost:5005/webhooks/rest/webhook', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'charset': 'UTF-8',
-            },
-            credentials: "same-origin",
-            body: JSON.stringify({ "sender": name, "message": msg }),
-        })
-        .then(response => response.json())
-        .then((response) => {
-            if (response) {
-                const temp = response[0];
+        try {
+            const response = await fetch('http://localhost:5005/webhooks/rest/webhook', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                    'charset': 'UTF-8',
+                },
+                credentials: "same-origin",
+                body: JSON.stringify({ "sender": name, "message": msg }),
+            });
+    
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+    
+            const responseData = await response.json();
+            if (responseData && responseData.length > 0) {
+                const temp = responseData[0];
                 const recipient_id = temp["recipient_id"];
                 const recipient_msg = temp["text"];
                 
-                const response_temp = {sender: "bot", recipient_id: recipient_id, msg: recipient_msg};
+                const response_temp = { sender: "bot", recipient_id: recipient_id, msg: recipient_msg };
                 setBotTyping(false);
                 setChat(chat => [...chat, response_temp]);
                 speak(recipient_msg); // Speak bot's response
             }
-        });
+        } catch (error) {
+            console.error('Fetch error:', error);
+        }
     };
+    
 
     const speak = (text) => {
         const utterance = new SpeechSynthesisUtterance(text);
@@ -115,6 +164,7 @@ function Basic() {
     };
 
     return (
+    <>
         <div>
             <div className="container">
                 <div className="row justify-content-center">
@@ -155,11 +205,14 @@ function Basic() {
                                     </div>
                                 </form>
                             </div>
+                             <button id="emergencyButton"  onClick={emergencybutton} className="emergency" >Emergency</button>
+                            <Link to="/analyze_sentiment"><button id="emergencyButton"   className="emergency" >Generate Report</button></Link>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        </>
     );
 }
 

@@ -15,3 +15,23 @@ rules:
   steps:
   - intent: share_problem
   - action: utter_listen_relationship_problem
+
+- rule: Understand user feelings
+  steps:
+  - intent: therapy
+  - action: action_llm_generate_response_therapy
+
+- rule: Acknowledge study related issues
+  steps:
+  - intent: studies
+  - action: utter_studies
+
+- rule: Ending Session
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Emergency
+  steps:
+  - intent: crisis
+  - action: utter_crisis
