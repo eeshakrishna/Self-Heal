@@ -2,10 +2,10 @@ from twilio.rest import Client
 
 def e(user_email, mongo):
     name=get_name(user_email,mongo)
-    account_sid = 'AC50b54c3b3fc1e25ba0ca79468019a37c'
-    auth_token = '8109044d0bec353b48d29e7c8df8c2cd'
+    account_sid = "your sid"
+    auth_token = "your token"
     client = Client(account_sid, auth_token)
-    twilio_number = '+13347211469'
+    twilio_number = "your twilio account number"
     sentence= f"Self Harm detected kindly contact {name} "
 
     emergency_contact_number=get_emergency_contact_number(user_email, mongo)   
