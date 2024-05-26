@@ -38,8 +38,6 @@ nlu:
 - intent: therapy
   examples: |
     - Life isnt going well for me
-    - I dont know what to do with myself
-    - What should I do moving forward
     - I'm feeling so lost mentally
     - I feel numb
     - I'm feeling unproductive I dont feel like doing anything at all.
@@ -75,7 +73,22 @@ nlu:
     - I feel killing myself.
     - I dont wanna be alive anymore.
     - I want to be erased from existance.
-    - I hate living
+    - I hate living.
     - I wish I was dead.
+
+- intent: help
+  examples: |
+    - What should I do about this stress?
+    - What are some ways I can relieve this stress.
+    - I dont know how to control my anxiety.
+    - I dont know how to keep my depression under my control.
+    - How can I deal with my mental issues.
+    - My heart always feels like its pounding out of chest.
+    - My mind is always rushing and I cant focus on anything.
+  
+- intent: thank
+  examples: |
+    - Thank you
+    - Thanks
     
 

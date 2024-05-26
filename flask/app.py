@@ -5,6 +5,7 @@ from datetime import datetime
 from flask_cors import CORS, cross_origin
 from emergency import e
 from sentimental import analyze_sentiment
+import re
 
 
 
@@ -58,7 +59,32 @@ def register():
     phone = data.get('phone')
     emergency_contact = data.get('emergency_contact')
 
+    password_regex = r'^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{7,}$'
+    if not re.match(password_regex, password):
+        return jsonify({"message": "Password must be at least 7 characters long, contain at least one uppercase letter, one number, and one special character"}), 400
 
+    # Date of birth validation
+    dob_regex = r'^\d{2}-\d{2}-\d{4}$'
+    try:
+        datetime.strptime(dob, '%d-%m-%Y')
+    except ValueError:
+        return jsonify({"message": "Date of birth must be in the format dd-mm-yyyy"}), 400
+
+    if not re.match(dob_regex, dob):
+        return jsonify({"message": "Date of birth must be in the format dd-mm-yyyy"}), 400
+
+    # Phone number validation
+    phone_regex = r'^\d{10}$'
+    if not re.match(phone_regex, phone):
+        return jsonify({"message": "Phone number must be exactly 10 digits long"}), 400
+
+    if not re.match(phone_regex, emergency_contact):
+        return jsonify({"message": "Emergency contact must be exactly 10 digits long"}), 400
+
+    if phone == emergency_contact:
+        return jsonify({"message": "Phone number and emergency contact cannot be the same"}), 400
+    
+    
     hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
 
 
@@ -118,26 +144,25 @@ def analyze_sentiment_route():
     existing_record = collection.find_one({'email': email})
     if existing_record:
         previous_score = existing_record.get('sentiment_score', 0)
-        collection.update_one({'email': email}, {'$set': {'sentiment_score': previous_score}})
     else:
         previous_score = 0.0
         collection.insert_one({'email': email, 'sentiment_score': 0})
 
-    sentiment, compound_score = analyze_sentiment(text)
+    current_score = analyze_sentiment(text)
+    sentiment = determine_sentiment(previous_score, current_score)
 
-    pass_previous_score_to_sentimental(previous_score)
+    # Update the database with the current score
+    collection.update_one({'email': email}, {'$set': {'sentiment_score': current_score}})
 
-    collection.update_one({'email': email}, {'$set': {'sentiment_score': compound_score}})
+    return jsonify({'sentiment': sentiment, 'compound_score': current_score})
 
-    return jsonify({'sentiment': sentiment, 'compound_score': compound_score})
-
-
-def pass_previous_score_to_sentimental(previous_score):
-    # Import the analyze_sentiment function from sentimental.py
-    
-    # Call analyze_sentiment with the previous score
-    analyze_sentiment('Previous score: {}'.format(previous_score))
-
+def determine_sentiment(previous_score, current_score):
+    if current_score > previous_score:
+        return "It's great to hear that you're feeling more positive than before! Keep up the good work!"
+    elif current_score < previous_score:
+        return "I'm sorry to hear that you're feeling less positive than before. Remember, ups and downs are normal, and it's okay to seek support when you need it."
+    else:
+        return "It sounds like your sentiment hasn't changed much since the last time. Remember to take care of yourself and reach out if you need help managing your emotions."
 
 @app.route('/emergency', methods=['POST','GET','OPTIONS'])
 @cross_origin(origins="*")

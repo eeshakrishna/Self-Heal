@@ -39,6 +39,16 @@ stories:
   - intent: goodbye
   - action: utter_goodbye
 
+- story: Help anxiety phy
+  steps:
+  - intent: help
+  - action: utter_help
+
+- story: Thank you
+  steps:
+  - intent: thank
+  - action: utter_thank
+
 - story: Issue
   steps: 
   - intent: crisis

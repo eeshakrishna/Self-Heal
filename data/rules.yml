@@ -35,3 +35,8 @@ rules:
   steps:
   - intent: crisis
   - action: utter_crisis
+
+- rule: Help A
+  steps:
+  - intent: help
+  - action: utter_help

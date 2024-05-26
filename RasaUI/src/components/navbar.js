@@ -6,12 +6,18 @@ import axios from 'axios';
 import { useNavigate  } from 'react-router-dom';
 
 
+
+
 function Navbar() {
+
+
   const navigate = useNavigate();
+
 
     const handleLogout = async () => {
         try {
             const response = await axios.post('http://localhost:5000/logout', {}, { withCredentials: true });
+
 
             if (response.status === 200) {
                 alert(response.data.message);
@@ -26,12 +32,13 @@ function Navbar() {
         }
     };
 
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light fixed-top" style={{ backgroundColor: '#efdecd', borderRadius:50, marginTop:10,marginLeft:10,marginRight:10}}>
         <div className="container-fluid">
           <span className="navbar-brand mb-0 h1" style={{ fontSize: '1.6rem', fontFamily:'serif'}}>
-            <strong>SELF HEAL -  </strong> Therapy Anywhere 
+            <strong>SELF HEAL -  </strong> Therapy Anywhere
           </span>
           <button
             className="navbar-toggler"
@@ -45,6 +52,7 @@ function Navbar() {
             <span className="navbar-toggler-icon"></span>
           </button>
 
+
           <div
             className="collapse navbar-collapse justify-content-end"
             id="navbarNavAltMarkup"
@@ -54,7 +62,8 @@ function Navbar() {
               <Link to="/hotline"><button className="nav-item nav-link btn btn-light mx-4" style={{ fontSize: '1.2rem' , fontFamily:'serif'}}>HELP</button></Link>
               <Link to="/chatbot"><button className="nav-item nav-link btn btn-light mx-4" style={{ fontSize: '1.2rem' , fontFamily:'serif'}}>BOT</button></Link>
               <Link to="/features"><button className="nav-item nav-link btn btn-light mx-4" style={{ fontSize: '1.2rem' , fontFamily:'serif'}}>FEATURES</button></Link>
-              <button onClick={handleLogout}>Logout</button>
+              <button className="nav-item nav-link btn btn-light mx-4" style={{ fontSize: '1.2rem' , fontFamily:'serif'}} onClick={handleLogout} >LOGOUT</button>
+              {/* <button onClick={handleLogout}>Logout</button> */}
             </div>
           </div>
         </div>
@@ -63,4 +72,8 @@ function Navbar() {
   );
 }
 
+
 export default Navbar;
+
+
+

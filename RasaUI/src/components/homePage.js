@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from './navbar'
+import myImage from './homeimg.jpeg'
 
 function Home() {
   return (
@@ -250,13 +251,13 @@ function Home() {
       />
       {/* Your Google Analytics Plugin is missing the tracking ID */}
       <div className="wp-site-blocks">
-        {/* <header className="wp-block-template-part">
+        <header className="wp-block-template-part">
           <div
             className="wp-block-group alignfull has-background-background-color has-background is-layout-constrained wp-container-core-group-is-layout-1 wp-block-group-is-layout-constrained"
             style={{ marginTop: "3.5vh", marginBottom: "3.5vh" }}
           >
             <div className="wp-block-columns alignwide are-vertically-aligned-center is-layout-flex wp-container-core-columns-is-layout-1 wp-block-columns-is-layout-flex">
-              <div
+              {/* <div
                 className="wp-block-column is-vertically-aligned-center is-layout-flow wp-block-column-is-layout-flow"
                 style={{ flexBasis: "70%" }}
               >
@@ -280,8 +281,8 @@ function Home() {
                     SelfHeal
                   </a>
                 </h5>
-              </div>
-              <div className="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+              </div> */}
+              {/* <div className="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
                 <div className="wp-block-buttons is-content-justification-center is-layout-flex wp-container-core-buttons-is-layout-1 wp-block-buttons-is-layout-flex">
                   <div className="wp-block-button">
                     <a
@@ -292,8 +293,8 @@ function Home() {
                     </a>
                   </div>
                 </div>
-              </div>
-              <div
+              </div> */}
+              {/* <div
                 className="wp-block-column is-vertically-aligned-center is-layout-flow wp-block-column-is-layout-flow"
                 style={{ flexBasis: "15%" }}
               >
@@ -307,10 +308,10 @@ function Home() {
                     </a>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
-        </header> */}
+        </header>
         <div
           className="wp-block-media-text alignfull is-stacked-on-mobile has-tertiary-background-color has-background"
           style={{
@@ -325,10 +326,10 @@ function Home() {
             <img
               width={980}
               height={980}
-              src="./wp-content/uploads/2024/04/futuristic-little-robot-in-question-pose-ai-technology-character-virtual-bot-artificial-intelligence-smart-machine-concept-modern-cyber-robot-mascot-it-future-robotics-chatbot-vector.jpg"
+              src={myImage}
               alt=""
               className="wp-image-112 size-full"
-              srcSet="https://i0.wp.com/html6554.wpcomstaging.com/wp-content/uploads/2024/04/futuristic-little-robot-in-question-pose-ai-technology-character-virtual-bot-artificial-intelligence-smart-machine-concept-modern-cyber-robot-mascot-it-future-robotics-chatbot-vector.jpg?w=980&ssl=1 980w, https://i0.wp.com/html6554.wpcomstaging.com/wp-content/uploads/2024/04/futuristic-little-robot-in-question-pose-ai-technology-character-virtual-bot-artificial-intelligence-smart-machine-concept-modern-cyber-robot-mascot-it-future-robotics-chatbot-vector.jpg?resize=300%2C300&ssl=1 300w, https://i0.wp.com/html6554.wpcomstaging.com/wp-content/uploads/2024/04/futuristic-little-robot-in-question-pose-ai-technology-character-virtual-bot-artificial-intelligence-smart-machine-concept-modern-cyber-robot-mascot-it-future-robotics-chatbot-vector.jpg?resize=150%2C150&ssl=1 150w, https://i0.wp.com/html6554.wpcomstaging.com/wp-content/uploads/2024/04/futuristic-little-robot-in-question-pose-ai-technology-character-virtual-bot-artificial-intelligence-smart-machine-concept-modern-cyber-robot-mascot-it-future-robotics-chatbot-vector.jpg?resize=768%2C768&ssl=1 768w, https://i0.wp.com/html6554.wpcomstaging.com/wp-content/uploads/2024/04/futuristic-little-robot-in-question-pose-ai-technology-character-virtual-bot-artificial-intelligence-smart-machine-concept-modern-cyber-robot-mascot-it-future-robotics-chatbot-vector.jpg?resize=800%2C800&ssl=1 800w, https://i0.wp.com/html6554.wpcomstaging.com/wp-content/uploads/2024/04/futuristic-little-robot-in-question-pose-ai-technology-character-virtual-bot-artificial-intelligence-smart-machine-concept-modern-cyber-robot-mascot-it-future-robotics-chatbot-vector.jpg?resize=600%2C600&ssl=1 600w, https://i0.wp.com/html6554.wpcomstaging.com/wp-content/uploads/2024/04/futuristic-little-robot-in-question-pose-ai-technology-character-virtual-bot-artificial-intelligence-smart-machine-concept-modern-cyber-robot-mascot-it-future-robotics-chatbot-vector.jpg?resize=400%2C400&ssl=1 400w, https://i0.wp.com/html6554.wpcomstaging.com/wp-content/uploads/2024/04/futuristic-little-robot-in-question-pose-ai-technology-character-virtual-bot-artificial-intelligence-smart-machine-concept-modern-cyber-robot-mascot-it-future-robotics-chatbot-vector.jpg?resize=200%2C200&ssl=1 200w"
+              // srcSet="https://i0.wp.com/html6554.wpcomstaging.com/wp-content/uploads/2024/04/futuristic-little-robot-in-question-pose-ai-technology-character-virtual-bot-artificial-intelligence-smart-machine-concept-modern-cyber-robot-mascot-it-future-robotics-chatbot-vector.jpg?w=980&ssl=1 980w, https://i0.wp.com/html6554.wpcomstaging.com/wp-content/uploads/2024/04/futuristic-little-robot-in-question-pose-ai-technology-character-virtual-bot-artificial-intelligence-smart-machine-concept-modern-cyber-robot-mascot-it-future-robotics-chatbot-vector.jpg?resize=300%2C300&ssl=1 300w, https://i0.wp.com/html6554.wpcomstaging.com/wp-content/uploads/2024/04/futuristic-little-robot-in-question-pose-ai-technology-character-virtual-bot-artificial-intelligence-smart-machine-concept-modern-cyber-robot-mascot-it-future-robotics-chatbot-vector.jpg?resize=150%2C150&ssl=1 150w, https://i0.wp.com/html6554.wpcomstaging.com/wp-content/uploads/2024/04/futuristic-little-robot-in-question-pose-ai-technology-character-virtual-bot-artificial-intelligence-smart-machine-concept-modern-cyber-robot-mascot-it-future-robotics-chatbot-vector.jpg?resize=768%2C768&ssl=1 768w, https://i0.wp.com/html6554.wpcomstaging.com/wp-content/uploads/2024/04/futuristic-little-robot-in-question-pose-ai-technology-character-virtual-bot-artificial-intelligence-smart-machine-concept-modern-cyber-robot-mascot-it-future-robotics-chatbot-vector.jpg?resize=800%2C800&ssl=1 800w, https://i0.wp.com/html6554.wpcomstaging.com/wp-content/uploads/2024/04/futuristic-little-robot-in-question-pose-ai-technology-character-virtual-bot-artificial-intelligence-smart-machine-concept-modern-cyber-robot-mascot-it-future-robotics-chatbot-vector.jpg?resize=600%2C600&ssl=1 600w, https://i0.wp.com/html6554.wpcomstaging.com/wp-content/uploads/2024/04/futuristic-little-robot-in-question-pose-ai-technology-character-virtual-bot-artificial-intelligence-smart-machine-concept-modern-cyber-robot-mascot-it-future-robotics-chatbot-vector.jpg?resize=400%2C400&ssl=1 400w, https://i0.wp.com/html6554.wpcomstaging.com/wp-content/uploads/2024/04/futuristic-little-robot-in-question-pose-ai-technology-character-virtual-bot-artificial-intelligence-smart-machine-concept-modern-cyber-robot-mascot-it-future-robotics-chatbot-vector.jpg?resize=200%2C200&ssl=1 200w"
               sizes="(max-width: 980px) 100vw, 980px"
             />
           </figure>
@@ -342,10 +343,10 @@ function Home() {
                 paddingLeft: "var(--wp--preset--spacing--40)",
               }}
             >
-              <h2 className="wp-block-heading">
+              <h1 className="wp-block-heading">
                 “Step into a realm of self-discovery with Therapy Self Heal Bot
                 – your guide to inner transformation.”
-              </h2>
+              </h1>
               <p
                 className="has-text-color has-small-font-size"
                 style={{ color: "#343230a6" }}
@@ -402,20 +403,18 @@ function Home() {
           />
           <div className="wp-block-columns alignwide is-layout-flex wp-container-core-columns-is-layout-3 wp-block-columns-is-layout-flex">
             <div className="wp-block-column is-vertically-aligned-center is-layout-flow wp-container-core-column-is-layout-5 wp-block-column-is-layout-flow">
-              <h2 className="wp-block-heading has-text-align-left has-xx-large-font-size">
-                About <strong>us</strong>
+              <h2 className="wp-block-heading has-text-align-left has-xxxx-large-font-size">
+                ABOUT  <strong>US</strong> <br/>
               </h2>
               <div className="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-2 wp-block-columns-is-layout-flex">
                 <div
                   className="wp-block-column is-layout-flow wp-container-core-column-is-layout-4 wp-block-column-is-layout-flow"
-                  style={{ flexBasis: "80%" }}
+                  style={{ flexBasis: "100%" }}
                 >
-                  <p className="has-text-align-justify wp-container-content-10">
-                    <em>
-                      Self Heal Bot offers personalized support tailored to your
-                      unique journey, empowering you to navigate challenges and
-                      discover inner resilience like never before.
-                    </em>
+                  <p className="has-text-align-justify wp-container-content-10" style={{ fontsize:50}}>
+                    {/* <em> */}
+                   Introducing Self Heal Bot: a personalized support platform for your unique journey. It empowers you to navigate challenges and discover inner resilience like never before. With tailored guidance and actionable insights, Self Heal Bot transforms generic advice into personalized solutions. <br/> <br/>Whether facing personal struggles or seeking self-improvement, it's here to help. Advanced algorithms analyze your input, offering strategies for growth and self-discovery. Say goodbye to feeling lost and overwhelmed; say hello to a happier, healthier you with Self Heal Bot. Join us on this transformative journey towards self-awareness and empowerment, where every step is guided by your individual needs and experiences.
+                    {/* </em> */}
                   </p>
                 </div>
               </div>
@@ -523,17 +522,17 @@ function Home() {
             </h2>
           </div>
         </div>
-        <footer className="wp-block-template-part">
+        {/* <footer className="wp-block-template-part">
           <footer
             className="wp-block-group alignfull has-background-color has-secondary-background-color has-text-color has-background has-link-color wp-elements-47f07ee427117a5cc5d1004725adde37 is-layout-constrained wp-container-core-group-is-layout-8 wp-block-group-is-layout-constrained"
             style={{
               marginTop: 0,
               marginBottom: 0,
-              paddingTop: "4.5vw",
-              paddingBottom: "4.5vw",
+              paddingTop: "2vw",
+              paddingBottom: "2vw",
             }}
-          >
-            <div className="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-5 wp-block-columns-is-layout-flex">
+          > */}
+            {/* <div className="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-5 wp-block-columns-is-layout-flex">
               <div
                 className="wp-block-column is-layout-flow wp-block-column-is-layout-flow"
                 style={{ flexBasis: "50%" }}
@@ -550,11 +549,11 @@ function Home() {
                   >
                     Self-Heal
                   </a>
-                </h1>
-                <p className="has-small-font-size">Bangalore</p>
-                <p className="has-small-font-size">jdfyjwfdhk</p>
-              </div>
-              <div className="wp-block-column is-layout-flow wp-container-core-column-is-layout-10 wp-block-column-is-layout-flow">
+                </h1> */}
+                {/* <p className="has-small-font-size">Bangalore</p> */}
+                {/* <p className="has-small-font-size">jdfyjwfdhk</p> */}
+              {/* </div> */}
+              {/* <div className="wp-block-column is-layout-flow wp-container-core-column-is-layout-10 wp-block-column-is-layout-flow">
                 <p className="has-small-font-size" />
               </div>
               <div className="wp-block-column is-layout-flow wp-container-core-column-is-layout-11 wp-block-column-is-layout-flow">
@@ -562,22 +561,22 @@ function Home() {
               </div>
               <div className="wp-block-column is-layout-flow wp-container-core-column-is-layout-12 wp-block-column-is-layout-flow">
                 <p className="has-small-font-size">ffdsv</p>
-              </div>
-            </div>
-          </footer>
-        </footer>
+              </div> */}
+            {/* </div> */}
+          {/* </footer>
+        </footer> */}
         {/* wp:group */}
-        <div className="wp-block-group">
+        {/* <div className="wp-block-group"> */}
           {/* wp:paragraph {"align":"center"} */}
-          <p className="has-text-align-center">
+          {/* <p className="has-text-align-center">
             <a href="https://wordpress.com/?ref=footer_blog">
               Blog at WordPress.com.
             </a>
-          </p>
+          </p> */}
           {/* /wp:paragraph */}
         </div>
         {/* /wp:group */}
-      </div>
+      {/* </div> */}
       {/* wpcom_wp_footer */}
       <style
         dangerouslySetInnerHTML={{

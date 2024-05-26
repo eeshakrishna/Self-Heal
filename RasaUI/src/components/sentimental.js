@@ -52,7 +52,7 @@ function Sentimental() {
           placeholder="Enter your text..."
           className="input-field"
         />
-        <button type="submit" className="button">Analyze</button>
+        <button type="submit" className="button1">Analyze</button>
       </form>
       
       {positiveScore !== null && (

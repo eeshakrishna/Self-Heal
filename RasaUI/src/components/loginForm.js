@@ -56,7 +56,7 @@ function Login() {
                         className="input-field"
                     />
                 </div>
-                <button className="button" type="submit">Login</button>
+                <button className="button1" type="submit">Login</button>
                 {message && <p>{message}</p>}
             </form>
             <p>New to Self-Heal? <Link to="/register">Register Now</Link></p>  

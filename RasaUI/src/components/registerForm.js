@@ -13,8 +13,42 @@ function Register() {
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
 
+  const validatePassword = (password) => {
+    const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{7,}$/;
+    return passwordRegex.test(password);
+  };
+
+  const formatDOB = (value) => {
+    let dobValue = value.replace(/\D/g, '');
+    if (dobValue.length > 2) dobValue = `${dobValue.slice(0, 2)}-${dobValue.slice(2)}`;
+    if (dobValue.length > 5) dobValue = `${dobValue.slice(0, 5)}-${dobValue.slice(5)}`;
+    return dobValue;
+  };
+
+  const validatePhoneNumber = (number) => {
+    const phoneRegex = /^\d{10}$/;
+    return phoneRegex.test(number);
+  };
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!validatePassword(password)) {
+      setMessage("Password must be at least 7 characters long, contain at least one uppercase letter, one number, and one special character.");
+      return;
+    }
+
+    if (!validatePhoneNumber(phone)) {
+      setMessage("Phone number must be exactly 10 digits long.");
+      return;
+    }
+
+    if (!validatePhoneNumber(emergencyContact)) {
+      setMessage("Emergency contact must be exactly 10 digits long.");
+      return;
+    }
+
     try {
       const { response } = await axios.post("http://localhost:5000/register",
        {
@@ -92,7 +126,7 @@ return (
           <input
             type="text"
             value={dob}
-            onChange={(e) => setDob(e.target.value)}
+            onChange={(e) => setDob(formatDOB(e.target.value))}
             className="input-field"
             placeholder="DOB(DD-MM-YY)"
           />
@@ -117,7 +151,7 @@ return (
             placeholder="Emergency Contact Number"
           />
         </div>
-        <button type="submit" className="button">REGISTER</button> <br/>
+        <button type="submit" className="button1">REGISTER</button> <br/>
         <a href="/login"> <p>After registering go to login</p> </a>
         {message && <p>{message}</p>}
       </form>

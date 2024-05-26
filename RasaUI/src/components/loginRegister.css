@@ -47,7 +47,7 @@ h2 {
     background-color: rgba(255, 255, 255, 0.4); /* Lighter semi-transparent white on focus */
 }
 
-.button {
+.button1 {
     background-color: #7b47e1; /* Pastel purple button */
     color: #fff;
     padding: 12px 24px;
@@ -58,7 +58,7 @@ h2 {
     box-shadow: 0 4px 8px rgba(187, 165, 232, 0.3); /* Soft shadow */
 }
 
-.button:hover {
+.button1:hover {
     background-color: #9b82d9; /* Darker shade on hover */
 }
 

@@ -10,6 +10,8 @@ intents:
 - studies
 - goodbye
 - crisis
+- help
+- thank
 
 actions:
 - utter_greet
@@ -20,6 +22,8 @@ actions:
 - utter_studies
 - utter_goodbye
 - utter_crisis
+- utter_help
+- utter_thank
 
 
 responses:
@@ -34,8 +38,7 @@ responses:
 
   utter_provide_advice_stress:
   - text: "Dealing with stress can be challenging. Try practicing mindfulness or deep breathing exercises."
-  - text: "Lets figure out what is the cause of you stressors"
-  - text: " Alright considering all the issues you have talked about lets focus on the things which you can actually control."
+
 
   utter_listen_relationship_problem:
   - text: "I'm here to listen. Please tell me more."
@@ -59,9 +62,22 @@ responses:
   - text: "Remember to practice self-care in the days ahead. You deserve it.Click on the sentimental button to gauge your improvement score and celebrate your progress. Remember, every step forward is a victory."
   - text: "Your insights today were valuable. Click on the sentimental button to gauge your improvement score and celebrate your progress. Remember, every step forward is a victory."
 
+  utter_help:
+  - text: "Use meditation apps or guided meditation sessions to help calm your mind.Engage in deep breathing exercises, such as diaphragmatic breathing, to reduce physical symptoms of anxiety.Try the 4-7-8 technique inhale for 4 seconds, hold your breath for 7 seconds, and exhale slowly for 8 seconds. These are some ways you could try to handle the physical symptoms you are facing."
+  - text: "Consider activities like yoga or tai chi, which combine physical movement with relaxation techniques.Maintain a consistent sleep schedule to ensure adequate rest.Create a relaxing bedtime routine to help signal to your body that it’s time to wind down. These are some helpful ways to aid your strain."
+  
+
+  utter_thank:
+  - text: "I'm glad I could help."
+  - text: "It's my pleasure."
+  - text: "I'm here to support you."
+  - text: "I'm happy to be of assistance."
+
   utter_crisis:
-  - text: "You seem to be exhibiting self harm tendencies right now, Remember there are healthier ways to cope."
+  - text: "You seem to be exhibiting self harm tendencies right now, remember there are healthier ways to cope. Click on the Emergency Button below to send a message to your trusted friend."
 
 
-
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
 
